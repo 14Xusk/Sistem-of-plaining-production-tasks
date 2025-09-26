@@ -1,0 +1,62 @@
+<!Doctype html>
+    <html>
+        <head>
+            <title>Склад</title>
+            <link rel="website icon" href="logoWebIcon.svg" type="svg">
+            <link rel="stylesheet" href="Styles.css" type="text/css">
+            <link rel="stylesheet" href="form.css" title="text/css">
+            <link rel="stylesheet" href="modal.css" type="text/css">
+            <script src="scriptsTest.js"></script>
+            <script src="modal.js"></script>
+        </head>
+        <body>
+            <header>
+                    <div class="HDv">
+                        <img src="logo.svg" width="150px" height="120px">
+                        <button class="HBtn"><a href="sales.html" class="HA">ПРОДАЖИ</a></button>
+                        <button class="HBtn"><a href="purchases.html">ЗАКУПКИ</a></button>
+                        <button class="HBtn"><a href="inventory.html">СКЛАД</a></button>
+                        <br>
+                        <button class="AddBtn" ID = "show-modal" style="position: absolute;">ДОБАВИТЬ</button>
+                    </div>
+                    <script>
+                        const ids = {
+                            DateofCreate: 'dateOfCreate',
+                            IDSales: 'category',
+                            Client: 'quantity',
+                            Manager: 'costPerOne',
+                            Sum: 'Sum',
+                            DateofDispatch: 'buyDate',
+                            Status: 'Status'
+                        };
+                        // создаём модальное окно
+                        const modal = new ItcModal({
+                        });
+                        modal.setBody("<form class = 'form-container'><h2>Введите данные</h2><div><label for = 'dateOfCreate'>Товар поступил</label><input type = 'date' width = '100' ID = 'dateOfCreate' ></div><div><label for = 'category'>Категория<label><input type = 'text' wodth = '40' ID = 'category' ></div><div><label for = 'quantity'>Количество</label><input type = 'text' width = '40' ID = 'quantity' ></div><div><label for = 'costPerOne'>Цена за единицу</label><input type = 'number' min = '1' width = '40' ID = 'costPerOne' ></div><div><label for = 'Sum'>Общая стоимость</label><input type = 'number' width = '100' ID = 'Sum' ></div><div ><label for = 'buyDate'>Дата добавления</label><input type = 'date' id = 'buyDate' ></div><div class='radio-group'><input name = 'Status' type = 'radio' value = 'Выполнено' ID = 'StatusT' checked><label for = 'StatusT'><span></span>Выполнено</label><input name = 'Status' type = 'radio' value = 'В процессе' ID = 'StatusF'><label for = 'StatusF'><span></span>В процессе</label></div><div><button onclick = 'sales(ids)' type = 'submit'>Отправить</button></div></form>");
+                        // при клике по кнопке #show-modal
+                        document.querySelector('#show-modal').addEventListener('click', () => {
+                          // откроем модальное окно
+                          modal.show();
+                        });
+                    </script>
+            </header>
+            <main>
+                <table aria-label="Semantic Elements" aria-describedby="semantic_elements_table_desc" aria-rowcount="1" role="table" width="100%" class="MTbl" id = "inventory">
+                    <thead role="rowgroup">
+                        <tr>
+                            <th>Товар поступил</th>
+                            <th>Категория</th>
+                            <th>Количество</th>
+                            <th>Цена за единицу</th>
+                            <th>Общая стоимость</th>
+                            <th>Дата закупки</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody role="rowgroup">
+                        
+                    </tbody>
+                </table>
+            </main>
+        </body>
+    </html>

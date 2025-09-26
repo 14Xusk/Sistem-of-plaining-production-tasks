@@ -1,0 +1,63 @@
+<!Doctype html>
+    <html>
+        <head>
+            <title>Продажи</title>
+            <link rel="website icon" href="logoWebIcon.svg" type="svg">
+            <link rel="stylesheet" href="Styles.css" type="text/css">
+            <link rel="stylesheet" href="modal.css" type="text/css">
+            <link rel="website icon" href="logoWebIcon.svg" type="svg">
+            <link rel="stylesheet" href = "form.css" type="text/css">
+            <script src="scriptsTest.js"></script>
+            <script src="modal.js"></script>
+        </head>
+        <body>
+            <header>
+                    <div class="HDv">
+                        <img src="logo.svg" width="150" height="120">
+                        <button class="HBtn"><a href="sales.html" class="HA">ПРОДАЖИ</a></button>
+                        <button class="HBtn"><a href="purchases.html">ЗАКУПКИ</a></button>
+                        <button class="HBtn"><a href="inventory.html">СКЛАД</a></button>
+                        <br>
+                        <button class="AddBtn" ID = "show-modal" style="position: absolute;">ДОБАВИТЬ</button>
+                    </div>
+                    <script>
+                        const ids = {
+                            DateofCreate: 'DateofCreate',
+                            IDSales: 'IDSales',
+                            Client: 'client',
+                            Manager: 'manager',
+                            Sum: 'sum',
+                            DateofDispatch: 'DateofDiscpatch',
+                            Status: 'Status'
+                        };
+                        // создаём модальное окно
+                        const modal = new ItcModal({
+                        });
+                        modal.setBody("<form class='form-container'><h2>Введите данные</h2><div><label for='DateofCreate'>Дата создания</label><input type='date' width='100' id='DateofCreate' name='DateofCreate' ></div><div><label for='IDSales'>Номер заказа</label><input type='text' width='40' id='IDSales' name='IDSales' ></div><div><label for='client'>Клиент</label><input type='text' width='40' id='client' name='client' ></div><div><label for='manager'>Ответственный менеджер</label><input type='text' width='40' id='manager' name='manager' ></div><div><label for='sum'>Сумма заказа</label><input type='number' min='1' width='40' id='sum' name='sum' ></div><div><label for='DateofDiscpatch'>Дата отгрузки</label><input type='date' width='100' id='DateofDiscpatch' name='DateofDiscpatch' ></div><div class='radio-group'><input name='Status' type='radio' value='Выполнено' id='StatusT' checked><label for='StatusT'><span></span>Выполнено</label><input name='Status' type='radio' value='В процессе' id='StatusF'><label for='StatusF'><span></span>В процессе</label></div><div><button onclick='sales(ids)' type='submit'>Отправить</button></div></form>");
+                        // при клике по кнопке #show-modal
+                        document.querySelector('#show-modal').addEventListener('click', () => {
+                          // откроем модальное окно
+                          modal.show();
+                        });
+                    </script>
+            </header>
+            <main>
+                <table aria-label="Semantic Elements" aria-describedby="semantic_elements_table_desc" aria-rowcount="1" role="table" width="100%" class="MTbl" id = "sales">
+                    <thead role="rowgroup">
+                        <tr role="row">
+                            <th role="columnheader" aria-sort="none" aria-rowindex="1" class="MTb" ID = "DateofCreate" >Дата создания</th>
+                            <th role="columnheader" aria-sort="ascending" aria-rowindex="1" class="MTb" ID = "IDSales">Номер заказа</th>
+                            <th role="columnheader" aria-sort="none" aria-rowindex="1" class="MTb" ID = "Client">Клиент</th>
+                            <th role="columnheader" aria-sort="none" aria-rowindex="1" class="MTb" ID = "Manager">Ответственный менеджер</th>
+                            <th role="columnheader" aria-sort="none" aria-rowindex="1" class="MTb" ID = "Sum">Сумма заказа</th>
+                            <th role="columnheader" aria-sort="none" aria-rowindex="1" class="MTb" ID = "DateofDiscpatch">Дата отгрузки</th>
+                            <th role="columnheader" aria-sort="none" aria-rowindex="1" class="MTb" ID = "Status">Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody role="rowgroup">
+                        
+                    </tbody>
+                </table>
+            </main>
+        </body>
+    </html>

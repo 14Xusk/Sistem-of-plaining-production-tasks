@@ -1,0 +1,105 @@
+:root {
+  --modal-margin-mobile: 0.5rem;
+  --modal-margin-desktop: 1.75rem;
+}
+
+.itc-modal {
+  --modal-margin: var(--modal-margin-mobile);
+}
+
+@media (min-width: 576px) {
+  .itc-modal {
+    --modal-margin: var(--modal-margin-desktop);
+  }
+}
+
+.itc-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+  pointer-events: none;
+}
+
+.itc-modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin: var(--modal-margin);
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease-in;
+}
+
+@media (min-width: 576px) {
+  .itc-modal-content {
+    max-width: 500px;
+    margin: var(--modal-margin) auto;
+  }
+}
+
+.itc-modal-show .itc-modal-backdrop,
+.itc-modal-show .itc-modal-content {
+  z-index: 1050;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.itc-modal-scrollable {
+  height: max-content ;/* calc(100% - var(--modal-margin) * 2); */
+  max-height: max-content;
+  overflow: hidden;
+}
+
+.itc-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eceeef;
+}
+
+.itc-modal-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.itc-modal-btn-close {
+  color: #000;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+}
+
+.itc-modal-btn-close:focus,
+.itc-modal-btn-close:hover {
+  opacity: 0.75;
+}
+
+.itc-modal-body {
+  position: relative;
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+}
+
+.itc-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+  border-top: 1px solid #e9ecef;
+  border-bottom-right-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+}

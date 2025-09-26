@@ -1,0 +1,153 @@
+.HBtn {
+    font-size: 18px;
+    margin: 0px 10px;
+    background: none;
+    padding: 3px 7px;
+    border: none;
+    justify-content: center;
+}
+
+.AddBtn{
+    background:rgb(242, 255, 168);
+    padding-inline: 10px;
+    border:3px;
+    border-radius: 20%;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: justify;
+    right: 100px;
+    top: 100px;
+}
+
+.HA{
+    color: #000000;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+header{
+    background: rgba(206, 206, 206);
+    width: 100%;
+    height: 135px;
+}
+
+.HBtn:hover{
+    transition-duration: 3s;
+    font-size: 30px;
+    writing-mode: horizontal-tb;
+    background-color: rgb(255, 220, 123);
+}
+
+body {
+    margin: 0;
+}
+.button {
+    background-color: green; /* Зеленый цвет */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.MTbl{
+    text-align: center;
+}
+
+.MTb{
+    height: 25px;
+}
+
+.black{
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: black;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+th {
+    background-color: #f2f2f2;
+}
+  
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+  
+tr:hover {
+    background-color: #f1f1f1;
+}
+td:empty {
+    background-color: tomato;
+}
+ /* Основные стили для input элементов */
+input.filter-input {
+  width: 150px; /* Компактная ширина */
+  padding: 5px 10px; /* Меньший внутренний отступ */
+  margin: 5px; /* Меньший внешний отступ */
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Стили для input элементов при фокусе */
+input.filter-input:focus {
+  border-color: #66afe9;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+  outline: none;
+}
+
+/* Стили для input элементов с ошибками */
+input.filter-input.error {
+  border-color: #e74c3c;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+}
+
+/* Стили для input элементов при успешной валидации */
+input.filter-input.success {
+  border-color: #2ecc71;
+  box-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+}
+
+/* Стили для input элементов с иконками */
+input.filter-input.with-icon {
+  padding-left: 30px;
+}
+
+input.filter-input.with-icon + .icon {
+  position: relative;
+  left: -25px;
+  top: -23px;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+input.filter-input.with-icon:focus + .icon {
+  color: #66afe9;
+}
